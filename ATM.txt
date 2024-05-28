@@ -1,0 +1,99 @@
+#include <stdio.h>
+int main() 
+{
+   int pin,w=0,choice,Amount=0,withdrwal,Bankbalance=0,deposited,Balance_Amount_is=0;
+   while(w!=1){
+   printf("Enter your valid PIN\n");
+   scanf("%d",&pin);
+   if(pin!=1012)
+   {
+        printf("Invalid PIN\n");
+   }
+   else
+   {
+       printf("valid PIN\n");
+         break;
+   }
+   }
+   printf("Welcome to our ATM\n");
+   printf("\n");
+    while(w!=1)
+   {
+       printf("\n");
+   printf("choice 1 : Balance checking\n");
+   printf("choice 2 : cash deposition\n");
+   printf("choice 3 : cash withdrawal\n");
+   printf("choice 4 : Exit\n");
+  
+   printf("Please enter your choice\n");
+   scanf("%d",&choice);
+   switch(choice)
+   {
+       case 1:
+       printf("Your account balance is %d\n", Balance_Amount_is);
+       printf("If you deposit Amount first then you can withdraw Amount\n");
+       
+       break;
+       case 2:
+       printf("Amount to be deposited\n");
+       scanf("%d",&deposited);
+       Balance_Amount_is=deposited+Balance_Amount_is;
+       printf("Your balance amount is %d\n", Balance_Amount_is);
+       break;
+       case 3:
+       printf("withdrwal Amount:");
+       scanf("%d",&withdrwal);
+     
+     
+     if(withdrwal<0)
+      {
+          printf("Invalid Amount please enter valid ammount");
+      }
+      else if(Balance_Amount_is>withdrwal){
+        Balance_Amount_is= Balance_Amount_is-withdrwal;
+      printf("Balance amount is %d\n", Balance_Amount_is);
+      }
+      else if(Balance_Amount_is==withdrwal)
+      {
+           Balance_Amount_is= Balance_Amount_is-withdrwal;
+           printf("Your bank balance is now %d Amount", Balance_Amount_is);
+      }
+   
+      else
+      {
+          printf(" for now your acount have no one  amount \n");
+          
+          
+      }
+      
+      
+      
+       break;
+       case 4:
+       printf("THANK YOU\n");
+       printf("Exit");
+       exit(0);
+         
+       
+       break;
+    
+    default:
+    printf("Invalid choice");
+     exit(0);
+   
+   
+    
+  
+  
+   }
+}
+   
+   
+   
+   
+
+    return 0;
+}
+
+     
+     
